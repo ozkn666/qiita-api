@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import {BASE_URL} from '../../../constants/common'
+import ReactMarkdown from 'react-markdown/with-html'
 
 const PostDetail = (props) => {
   
@@ -18,7 +19,11 @@ const PostDetail = (props) => {
   return (
     <div>
       <h2>{postData.title}</h2>
-      {postData.body}
+      <ReactMarkdown 
+        source={postData.body}
+        escapeHtml={false}
+      />
+      
     </div>
   )
 }
