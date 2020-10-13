@@ -19,6 +19,7 @@ const PostDetail = (props) => {
   return (
     <div>
       <h2>{postData.title}</h2>
+      <div>{postData.created_at}</div>
       <ReactMarkdown 
         source={postData.body}
         escapeHtml={false}
