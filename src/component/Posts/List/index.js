@@ -16,11 +16,13 @@ const PostList = () => {
   }, [])
 
   return (
-    <div>
-      <h2>記事一覧</h2>
-      <Contents
-        data={postsData}
-      />
+    <div className="l-main">
+      <div className="p-main">
+        <h2 className="c-heading__title">記事一覧</h2>
+        <Contents
+          data={postsData}
+        />
+      </div>
     </div>
   )
 }
