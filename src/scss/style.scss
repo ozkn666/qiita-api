@@ -2,8 +2,12 @@
 // Foundation
 // ==========================================================================
 
-@import "foundation/_reset";
-@import "foundation/_base";
+@import "foundation/reset";
+@import "foundation/color";
+@import "foundation/media-queries";
+@import "foundation/variable";
+@import "foundation/base";
+
 
 // ==========================================================================
 // Layout

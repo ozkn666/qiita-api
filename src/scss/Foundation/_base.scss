@@ -1,0 +1,81 @@
+@charset "UTF-8";
+
+html {
+	font-size: 62.5%;
+	}
+body {
+  font-family: 'Noto Sans JP','M PLUS 1p', 'Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','メイリオ', 'Meiryo', 'sans-serif';
+	position: relative;
+	line-height: 1.6;
+	font-size: 1.6em;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+	opacity: 0.7;
+	text-decoration: none;
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: bold;
+  color: $text-color1;
+}
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a {
+  color: $text-color1;
+}
+
+.clearfix {
+	display: block;
+}
+
+.clearfix:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.clearfix:before {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+li {
+	list-style: none;
+}
+
+
+p {
+	font-size: 1.6rem;
+}
+
+@include sp {
+  /* SP */
+  body {
+    min-width: auto;
+	}
+
+	p {
+    font-size: getVwFromPx(32);
+	}
+
+
+}
+
