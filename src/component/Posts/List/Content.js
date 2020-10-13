@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 const PostCard = props => {
   return (
@@ -6,6 +7,7 @@ const PostCard = props => {
     <img src={props.data.user.profile_image_url} />
     {props.data.title}
     {props.data.created_at}
+    <Link to={"posts/" + props.data.id}>to Detail</Link>
   </li>
   )
 }
