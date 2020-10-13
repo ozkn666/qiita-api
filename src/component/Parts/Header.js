@@ -1,9 +1,14 @@
 import React from "react"
+import {Link} from 'react-router-dom'
 
 const Header = () => {
   return (
-    <header>
-      <h1>Qiita API</h1>
+    <header className="l-header">
+      <div className="p-header">
+        <Link to="/">
+          <h1 className="c-heading__header">Qiita API</h1>
+        </Link>
+      </div>
     </header>
   )
 }
