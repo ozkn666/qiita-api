@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import {BASE_URL} from '../../../constants/common'
+import Contents from './Contents'
 
 const PostList = () => {
 
   // 取得した投稿一覧データ
-  const [postsData, setPostsData] = useState()
+  const [postsData, setPostsData] = useState([])
   
   // マウント時に投稿データを取得する
   useEffect(() => {
@@ -17,7 +18,9 @@ const PostList = () => {
   return (
     <div>
       <h2>記事一覧</h2>
-      <p>{`${BASE_URL}items`}</p>
+      <Contents
+        data={postsData}
+      />
     </div>
   )
 }
