@@ -13,6 +13,8 @@ import Footer from './component/Parts/Footer';
 import PostList from './component/Posts/List'
 import PostDetail from './component/Posts/Detail'
 
+import './scss/style.scss'
+
 ReactDOM.render(
   <Router>
     <Header />
