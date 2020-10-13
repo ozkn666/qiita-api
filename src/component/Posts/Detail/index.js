@@ -23,7 +23,6 @@ const PostDetail = (props) => {
         source={postData.body}
         escapeHtml={false}
       />
-      
     </div>
   )
 }
