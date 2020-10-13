@@ -6,7 +6,7 @@ const Header = () => {
     <header className="l-header">
       <div className="p-header">
         <Link to="/">
-          <h1 className="c-heading__header">Qiita API</h1>
+          <h1 className="c-heading__main">Qiita API</h1>
         </Link>
       </div>
     </header>
