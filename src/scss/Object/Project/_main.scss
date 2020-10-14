@@ -8,10 +8,20 @@
   .c-heading__title {
     padding: 1.6rem;
   }
+  .c-card__post__content .c-heading__title {
+    padding: 1.6rem 0;
+  }
 }
 
 @include sp {
   .p-main {
     width: 100%;
+    padding: getVwFromPx(32) 0;
+    .c-heading__title {
+      padding: getVwFromPx(16);
+    }
+    .c-card__post__content .c-heading__title {
+      padding: 0 0 getVwFromPx(32) 0;
+    }
   }
 }

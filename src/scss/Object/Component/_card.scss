@@ -19,7 +19,6 @@
     width: 90%;
     margin-left: 1.6rem;
     .c-heading__title {
-      padding: 1.6rem 0 !important;
       &:hover {
         text-decoration: underline;
       }
@@ -28,5 +27,20 @@
   &__meta {
     font-size: 0.9rem;
     color: $text-color2;
+  }
+}
+
+@include sp {
+  .c-card__post {
+    &__image {
+      width: 20%;
+    }
+    &__content {
+      width: 80%;
+      margin-left: getVwFromPx(32);
+    }
+    &__meta {
+      font-size: getVwFromPx(18);
+    }
   }
 }
