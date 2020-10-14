@@ -14,3 +14,18 @@
     font-size: 4.0rem;
   }
 }
+
+@include sp {
+  .c-heading {
+    &__main {
+      font-size: getVwFromPx(45);
+    }
+    &__title {
+      font-size: getVwFromPx(32);
+    }
+    &__post-title {
+      font-size: getVwFromPx(60);
+      line-height: getVwFromPx(80);
+    }
+  }
+}

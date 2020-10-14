@@ -6,10 +6,12 @@ const Header = () => {
   return (
     <header className="l-header">
       <div className="p-header">
-        <Link to="/">
-          <h1 className="c-heading__main">Qiita API</h1>
-        </Link>
-        <Logout/>
+        <div className="p-header__inner">
+          <Link to="/">
+            <h1 className="c-heading__main">Qiita API</h1>
+          </Link>
+          <Logout/>
+        </div>
       </div>
     </header>
   )

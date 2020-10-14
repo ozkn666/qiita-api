@@ -4,9 +4,26 @@
   width: $main-inner;
   margin: 0 auto;
   padding: 1.0rem 0;
-  display: flex;
-  justify-content: space-between;
+  &__inner {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
   .c-btn__sub {
     width: 10rem;
+  }
+}
+
+@include sp {
+  .p-header {
+    width: 100%;
+    padding: getVwFromPx(20) 0;
+    &__inner {
+      width: 100%;
+      padding: 0 getVwFromPx(20);
+    }
+    .c-btn__sub {
+      width: getVwFromPx(200);
+    }
   }
 }

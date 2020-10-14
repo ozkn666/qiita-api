@@ -13,7 +13,6 @@
  * @returns {void}
  */
 
-import { useEffect } from 'react';
 import axios from 'axios';
 import { CLIENT_ID, CLIENT_SECRET, CLIENT_SCOPE, CLIENT_STAT, AUTH_URL, TOKEN_URL, TOKEN_NAME } from '../constants/common'
 import formatQueryParameter from './FormatQueryParameter'
