@@ -4,16 +4,15 @@ import Content from './Content'
 const Cards = props => {
   const contentList = props.data.map((content, index) => {
     return (
-      <div key={index}>
-        <Content 
-          data={content}
-        />
-      </div>
+      <Content
+        key={index}
+        data={content}
+      />
     );
   })
 
   return (
-    <div>
+    <div className="p-post-list">
       {contentList}
     </div>
   )
