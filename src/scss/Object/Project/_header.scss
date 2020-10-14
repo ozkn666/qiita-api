@@ -4,4 +4,9 @@
   width: $main-inner;
   margin: 0 auto;
   padding: 1.0rem 0;
+  display: flex;
+  justify-content: space-between;
+  .c-btn__sub {
+    width: 10rem;
+  }
 }

@@ -1,3 +1,7 @@
+/**
+ * 投稿の詳細情報を表示するコンポーネント
+ */
+
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import {BASE_URL} from '../../../constants/common'
@@ -10,6 +14,7 @@ const PostDetail = (props) => {
 
   const [postData, setPostData] = useState({})
 
+  // マウント時に投稿データを取得する
   useEffect(()=> {
     axios.get(`${BASE_URL}items/${postId}`).then(response => {
       setPostData(response.data)
