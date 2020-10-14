@@ -17,13 +17,21 @@ const PostDetail = (props) => {
   }, [])
 
   return (
-    <div>
-      <h2>{postData.title}</h2>
-      <div>{postData.created_at}</div>
-      <ReactMarkdown 
-        source={postData.body}
-        escapeHtml={false}
-      />
+    <div className="l-main">
+      <div className="p-main">
+        <div className="p-post">
+          <div className="p-post__meta">{postData.updated_at}に更新</div>
+          <div className="p-post__content">
+            <h2 className="c-heading__post-title">{postData.title}</h2>
+            <div className="p-post__body">
+              <ReactMarkdown 
+                source={postData.body}
+                escapeHtml={false}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
