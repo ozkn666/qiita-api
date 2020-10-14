@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+.c-heading {
+  &__main {
+    color: $base-color1;
+    font-size: 2.25rem;
+  }
+  &__title {
+    color: $text-color1;
+    font-size: 1.6rem;
+  }
+  &__post-title {
+    color: $text-color1;
+    font-size: 4.0rem;
+  }
+}

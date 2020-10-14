@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+.p-main {
+  width: $main-inner;
+  margin: 0 auto;
+  padding: 3.2rem 0;
+  background: $base-color1;
+  .c-heading__title {
+    padding: 1.6rem;
+  }
+}
