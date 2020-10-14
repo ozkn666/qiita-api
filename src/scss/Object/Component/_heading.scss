@@ -14,3 +14,11 @@
     font-size: 4.0rem;
   }
 }
+
+@include sp {
+  .c-heading {
+    &__main {
+      font-size: getVwFromPx(45);
+    }
+  }
+}

@@ -9,3 +9,9 @@
     padding: 1.6rem;
   }
 }
+
+@include sp {
+  .p-main {
+    width: 100%;
+  }
+}
