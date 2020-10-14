@@ -2,8 +2,12 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import {BASE_URL} from '../../../constants/common'
 import ReactMarkdown from 'react-markdown/with-html'
+import Authentication from '../../../modules/Authentication'
 
 const PostDetail = (props) => {
+
+  // アプリケーションの認証認可を確認
+  Authentication()
   
   // URLから投稿記事のidを取得
   const postId = props.match.params.id
