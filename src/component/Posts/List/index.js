@@ -1,13 +1,13 @@
+/**
+ * 投稿一覧を表示するコンポーネント
+ */
+
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import {BASE_URL} from '../../../constants/common'
 import Contents from './Contents'
-import Authentication from '../../../modules/Authentication'
 
 const PostList = () => {
-
-  // アプリケーションの認証認可を確認
-  Authentication()
 
   // 取得した投稿一覧データ
   const [postsData, setPostsData] = useState([])
