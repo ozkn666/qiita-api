@@ -20,42 +20,39 @@ import formatQueryParameter from './FormatQueryParameter'
 
 const Authentication = () => {
 
-  useEffect(() => {
+  // Qiitaのトークンがセッションに保存されているか確認する
+  let token = sessionStorage.getItem(TOKEN_NAME);
 
-    // Qiitaのトークンがセッションに保存されているか確認する
-    let token = sessionStorage.getItem(TOKEN_NAME);
+  // トークンがあれば、認可認証を行わない
+  if(token) return
 
-    // トークンがあれば、認可認証を行わない
-    if(token) return
-
-    // クエリパラメータをオブジェクトで取得
-    let queryObject = formatQueryParameter()
+  // クエリパラメータをオブジェクトで取得
+  let queryObject = formatQueryParameter()
 
 
-    /**
-     * アプリケーションが認可されていない場合
-     * つまり、クエリパラメータに適切な値が付与されていない場合は認可ページへ
-     */
+  /**
+   * アプリケーションが認可されていない場合
+   * つまり、クエリパラメータに適切な値が付与されていない場合は認可ページへ
+   */
 
-    if (queryObject.code === null || queryObject.state !== CLIENT_STAT) {
-      window.location.href = AUTH_URL + "?client_id=" + CLIENT_ID+"&scope="+CLIENT_SCOPE+"&state="+CLIENT_STAT;
-    }
+  if (queryObject.code === null || queryObject.state !== CLIENT_STAT) {
+    window.location.href = AUTH_URL + "?client_id=" + CLIENT_ID+"&scope="+CLIENT_SCOPE+"&state="+CLIENT_STAT;
+  }
 
 
-    /**
-     * アプリケーションが認可されている場合
-     */
+  /**
+   * アプリケーションが認可されている場合
+   */
 
-    // トークンの発行をリクエストする
-    axios.post(TOKEN_URL, {
-      client_id: CLIENT_ID,
-      client_secret: CLIENT_SECRET,
-      code: queryObject.code
-    })
-    .then(response => {
-      // 返却されたトークンをセッションへ保存
-      sessionStorage.setItem(TOKEN_NAME, response.data.token); 
-    })
+  // トークンの発行をリクエストする
+  axios.post(TOKEN_URL, {
+    client_id: CLIENT_ID,
+    client_secret: CLIENT_SECRET,
+    code: queryObject.code
+  })
+  .then(response => {
+    // 返却されたトークンをセッションへ保存
+    sessionStorage.setItem(TOKEN_NAME, response.data.token); 
   })
 }
 
