@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import formatDate from '../../../modules/FormatDate'
 
 const PostCard = props => {
   return (
@@ -12,7 +13,7 @@ const PostCard = props => {
           <h3 className="c-heading__title">{props.data.title}</h3>
         </Link>
         <div className="c-card__post__meta">
-          {props.data.created_at}
+          {formatDate(props.data.created_at)}
         </div>
       </div>
     </div>
