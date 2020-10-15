@@ -1,13 +1,43 @@
-import React from 'react';
+/**
+ * アプリケーション全体の設定(ルーティング、認証認可)をまとめたコンポーネント
+ */
 
-function App() {
+import React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+
+// コンポーネント
+import Header from './component/Parts/Header'
+import Footer from './component/Parts/Footer'
+import PostList from './component/Posts/List'
+import PostDetail from './component/Posts/Detail'
+import NotFound from './component/404'
+
+// CSSのインポート
+import './scss/style.scss'
+
+// 関数のインポート
+import Authentication from './modules/Authentication'
+
+const App = () => {
+
+  // アプリケーションの認証認可を確認
+  Authentication()
+
   return (
-    <div>
-      <header>
-        <h1>Qiita API</h1>
-      </header>
-    </div>
-  );
+    <Router>
+      <Header />
+      <Switch>
+        <Route exact path="/" component={PostList} />
+        <Route path="/posts/:id" component={PostDetail} />
+        <Route component={NotFound} />
+      </Switch>
+      <Footer />
+    </Router>
+  )
 }
 
-export default App;
+export default App

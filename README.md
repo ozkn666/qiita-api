@@ -8,3 +8,15 @@ yarn install
 ```
 yarn start
 ```
+
+## 本番ビルド
+```
+yarn build
+```
+
+## 使用ライブラリ
+- axios(https://github.com/axios/axios)
+- React Router(https://github.com/ReactTraining/react-router)
+- react-markdown(https://github.com/remarkjs/react-markdown)
+- node-sass(https://github.com/sass/node-sass)
+- fontawesome(https://github.com/FortAwesome/Font-Awesome)

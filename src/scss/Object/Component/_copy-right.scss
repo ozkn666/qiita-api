@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+.c-copy-right {
+  color: $base-color1;
+  font-size: 1.2rem;
+}
+
+@include sp {
+  .c-copy-right {
+    font-size: getVwFromPx(24);
+  }
+}

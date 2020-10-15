@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+.p-footer {
+  width: $main-inner;
+  margin: 0 auto;
+  padding: 1.0rem 0;
+  &__inner {
+    width: 13.0rem;
+    margin:  0 auto;
+  }
+}
+
+@include sp {
+  .p-footer {
+    width: 100%;
+    padding: getVwFromPx(20) 0;
+    &__inner {
+      width: 33%;
+    }
+  }
+}

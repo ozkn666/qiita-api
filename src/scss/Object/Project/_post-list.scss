@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+.p-post-list {
+  width: 100%;
+  .c-card__post {
+    padding: 1.6rem;
+  }
+}
+
+@include sp {
+  .p-post-list {
+    .c-card__post {
+      padding: getVwFromPx(32);
+    }
+  }
+}
