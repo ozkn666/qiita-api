@@ -9,6 +9,11 @@ yarn install
 yarn start
 ```
 
+## 本番ビルド
+```
+yarn build
+```
+
 ## 使用ライブラリ
 - axios(https://github.com/axios/axios)
 - React Router(https://github.com/ReactTraining/react-router)
