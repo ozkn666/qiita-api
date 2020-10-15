@@ -28,6 +28,8 @@ const Authentication = () => {
   // クエリパラメータをオブジェクトで取得
   let queryObject = formatQueryParameter()
 
+  // アプリケーション認可ページのURL
+  const authorizePage = AUTH_URL + "?client_id=" + CLIENT_ID+"&scope="+CLIENT_SCOPE+"&state="+CLIENT_STAT
 
   /**
    * アプリケーションが認可されていない場合
@@ -35,7 +37,7 @@ const Authentication = () => {
    */
 
   if (queryObject.code === null || queryObject.state !== CLIENT_STAT) {
-    window.location.href = AUTH_URL + "?client_id=" + CLIENT_ID+"&scope="+CLIENT_SCOPE+"&state="+CLIENT_STAT;
+    window.location.href = authorizePage
   }
 
 
@@ -52,6 +54,14 @@ const Authentication = () => {
   .then(response => {
     // 返却されたトークンをセッションへ保存
     sessionStorage.setItem(TOKEN_NAME, response.data.token); 
+  })
+  .catch(error => {
+    /**
+     * ログイン後はトークン発行リクエスト可能なクエリパラメータがURLに付いている状態。
+     * この状態でログアウト処理をすると、トークン発行リクエストを送ってしまうので、
+     * この場合は認可ページにリダイレクトをかける
+     */
+    window.location.href = authorizePage
   })
 }
 

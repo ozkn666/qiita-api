@@ -10,10 +10,11 @@ import {
 } from "react-router-dom";
 
 // コンポーネント
-import Header from './component/Parts/Header';
-import Footer from './component/Parts/Footer';
+import Header from './component/Parts/Header'
+import Footer from './component/Parts/Footer'
 import PostList from './component/Posts/List'
 import PostDetail from './component/Posts/Detail'
+import NotFound from './component/404'
 
 // CSSのインポート
 import './scss/style.scss'
@@ -31,7 +32,8 @@ const App = () => {
       <Header />
       <Switch>
         <Route exact path="/" component={PostList} />
-        <Route exact path="/posts/:id" component={PostDetail} />
+        <Route path="/posts/:id" component={PostDetail} />
+        <Route component={NotFound} />
       </Switch>
       <Footer />
     </Router>
